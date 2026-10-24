@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: safi-tv
+    env: python
+    region: oregon   # change to your preferred region
+    buildCommand: "pip install --upgrade pip"
+    startCommand: "python server-public.py"
+    envVars:
+      - key: PORT
+        value: 10000   # Render assigns this automatically; kept as default
+    # healthCheckPath: /   # optional: Render will GET / to verify the service
+    # autoDeploy: true     # redeploy on every push to main
